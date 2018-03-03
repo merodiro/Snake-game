@@ -30,14 +30,14 @@ pub struct Game {
 impl Game {
     pub fn new(width: i32, height: i32) -> Game {
         Game {
-            snake: Snake::new(2,2),
+            snake: Snake::new(2, 2),
             waiting_time: 0.0,
             food_exists: true,
             food_x: 6,
             food_y: 4,
             width,
             height,
-            game_over: false
+            game_over: false,
         }
     }
 
@@ -85,7 +85,7 @@ impl Game {
             if self.waiting_time > RESTART_TIME {
                 self.restart();
             }
-            return
+            return;
         }
 
         if !self.food_exists {
@@ -109,7 +109,7 @@ impl Game {
         let (next_x, next_y) = self.snake.next_head(dir);
 
         if self.snake.overlap_tail(next_x, next_y) {
-            return false
+            return false;
         }
 
         next_x > 0 && next_y > 0 && next_x < self.width - 1 && next_y < self.height - 1
