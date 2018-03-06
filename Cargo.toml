@@ -6,3 +6,6 @@ authors = ["Amr A.Mohammed <merodiro@gmail.com>"]
 [dependencies]
 rand="0.3.22"
 piston_window="0.77.0"
+
+[build-dependencies]
+cc = { git = "https://github.com/alexcrichton/cc-rs" }
